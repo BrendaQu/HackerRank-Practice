@@ -430,3 +430,30 @@ function catAndMouse(x, y, z) {
         return "Cat B";
     }
 }
+
+/*Electronics Shop*/
+function getMoneySpent(keyboards, drives, b) {
+    /*
+     * Write your code here.
+     */
+    let max_b = -1;
+    const k_n = keyboards.length;
+    const d_n = drives.length;
+    keyboards.reverse();
+    drives.sort();
+    
+    for(let i = 0; i < k_n; i++) {
+        for(let j = 0; j < d_n; j++) {
+            let temp = keyboards[i] + drives[j];
+            if(temp > b) {
+                break;
+            }
+            if(temp > max_b) {
+                max_b = temp;
+            } 
+        }
+    }
+    
+    return max_b;
+
+}
