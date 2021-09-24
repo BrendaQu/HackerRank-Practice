@@ -395,3 +395,38 @@ function pageCount(n, p) {
         }
     }
 }
+
+/*Counting Valleys*/
+function countingValleys(steps, path) {
+    // Write your code here
+    let valley = 0;
+    let sealevel = 0;
+    let currentlevel = 0;
+    
+    for(let i = 0; i < steps; i++) {
+        if(path[i] == "U") {
+            currentlevel++;
+        } else {
+            currentlevel--;
+        }
+        if(currentlevel == sealevel && path[i]== "U"){
+            valley++;
+        }
+    }
+    
+    return valley;
+}
+
+/*Cat and a Mouse*/
+function catAndMouse(x, y, z) {
+    let cat_a = Math.abs(z-x);
+    let cat_b = Math.abs(z-y);
+    
+    if(cat_a == cat_b) {
+        return "Mouse C";
+    } else if (cat_a < cat_b) {
+        return "Cat A";
+    } else {
+        return "Cat B";
+    }
+}
