@@ -457,3 +457,65 @@ function getMoneySpent(keyboards, drives, b) {
     return max_b;
 
 }
+
+//The Hurdle Race
+function hurdleRace(k, height) {
+    // Write your code here
+    let max = 0;
+    
+    height.forEach((num) => {
+        if(num > k && num > max){
+            max = num;
+        }
+    })
+    
+    if(max > 0) {
+        return max-k;
+    } else {
+        return max;
+    }
+}
+
+//Designer PDF Viewer
+function designerPdfViewer(h, word) {
+    // Write your code here
+    let arr = word.split("");
+    let arr_i = [];
+    let arr_h = [];
+    let h_max = 0;
+    arr.forEach((char) => {
+        arr_i.push(char.charCodeAt(0) - 97);
+    })
+    
+    for(let i = 0; i < 26; i++){
+        for(let j = 0; j < arr_i.length; j++){
+            if(arr_i[j] === i) {
+                arr_h.push(h[i]);
+            }
+        }
+    }
+    
+    arr_h.forEach((height) => {
+        if(height > h_max) {
+            h_max = height;
+        }
+    })
+    
+    return h_max* word.length;
+}
+
+//Utopian Tree 
+function utopianTree(n) {
+    // Write your code here
+    let height = 0;
+    
+    for(let i = 0; i <= n; i++){
+        if (i%2 == 0) {
+            height++;         
+        } else {
+            height = height *2;
+        }
+    }
+    
+    return height;
+}
